@@ -28,6 +28,7 @@ public class SQLModel {
             return o.invoke(this);
         } catch (Exception e) {
             System.err.format("%s Classındaki %s Fieldi Çekilirken Hata\n", this.getClass().getName(), fieldName);
+            e.printStackTrace();
             return "";
         }
     }
