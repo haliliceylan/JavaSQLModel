@@ -20,11 +20,6 @@ public class Halil {
     public static void main(String[] args) throws Exception{
         Config.mysqlConnect();
         SQLModels.loadClass(new Player());
-        Player nesne = (Player) SQLModels.get(Player.class, "name", "halil");
-        nesne.setName("berat");
-        nesne.setSurname("girdimi");
-        nesne.setFaction_id(1);
-        nesne.save();
     }
 
 }
