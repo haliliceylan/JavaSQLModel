@@ -15,7 +15,6 @@ public class Faction extends SQLModel{
     private String factionName;
 
     public Faction(String factionName) {
-        this.id = 1;
         this.factionName = factionName;
         this.databaseFields= new String[]{"id","factionName"};
         this.tableName = "factions";

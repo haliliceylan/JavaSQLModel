@@ -26,7 +26,6 @@ public class SQLModels {
      */
     public static void loadClass(SQLModel Example) {
         try {
-
             if (!Models.containsKey(Example.getClass())) {
                 Models.put(Example.getClass(), new ArrayList<SQLModel>());
             }
@@ -80,12 +79,18 @@ public class SQLModels {
         }
         return temp.toArray(new SQLModel[0]);
     }
-    
-    
-
-    // Berat Söylenmeyi bırak aq nere gittin amk
 
     public ArrayList<SQLModel> getAll(Object key) {
         return Models.get(key);
+    }
+
+    public void add(Class Class, SQLModel Model) {
+        if (!Models.containsKey(Class)) {
+            Models.put(Class, new ArrayList<SQLModel>());
+        }
+        ArrayList<SQLModel> list = Models.get(Class);
+        if (!list.contains(Model)) {
+            list.add(Model);
+        }
     }
 }
